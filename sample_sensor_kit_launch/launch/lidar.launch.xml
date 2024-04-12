@@ -14,6 +14,11 @@
       <include file="$(find-pkg-share rslidar_sdk)/launch/start.py">
       </include>
     </group>
+    <!-- <group>
+      <push-ros-namespace namespace="top"/>
+      <include file="$(find-pkg-share nebula_ros)/launch/robosense_launch.all_hw.xml">
+      </include>
+    </group> -->
 
     <!-- <group>
       <push-ros-namespace namespace="top"/>
