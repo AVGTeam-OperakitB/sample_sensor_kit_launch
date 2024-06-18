@@ -1,11 +1,17 @@
 <launch>
   <arg name="launch_driver" default="true"/>
   <arg name="camera_type" default="left"/>
+  <!-- EDIT_ -->
+  <arg name="camera_model_name" default="zed2i"/>
 
   <group>
     <push-ros-namespace namespace="camera"/>
     <group>
       <push-ros-namespace namespace="traffic_light"/>
+      <!-- EDIT_ -->
+      <include file="$(find-pkg-share zed_wrapper)/launch/zed_camera.launch.py">
+        <arg name="camera_model" value="$(var camera_model_name)"/>
+      </include>
 
       <!-- (usb_cam_node is assumed to have launched on logging PC) -->
       <node pkg="topic_tools" exec="relay" name="tl_camera_info_relay" output="log">
